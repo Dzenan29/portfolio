@@ -124,7 +124,7 @@ export function ContactForm({ endpoint, labels }: { endpoint: string; labels: La
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex min-h-11 items-center rounded-lg bg-accent px-5 text-sm font-medium text-accent-ink transition-colors hover:bg-accent-strong disabled:opacity-60"
+        className="inline-flex min-h-11 items-center rounded-lg bg-fg px-5 text-sm font-medium text-bg transition-opacity hover:opacity-85 disabled:opacity-60"
       >
         {status === "sending" ? labels.sending : labels.submit}
       </button>

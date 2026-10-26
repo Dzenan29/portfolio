@@ -69,7 +69,7 @@ export function AvailabilityFlow({ locale, labels }: { locale: Locale; labels: L
       <div className="panel p-4 sm:p-5">
         <div className="flex items-center justify-between">
           <span className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">flow · availability-check</span>
-          <span className="rounded border border-warn/30 bg-warn-soft px-1.5 font-mono text-[10px] uppercase text-warn">{labels.simulated}</span>
+          <span className="rounded border border-line-strong px-1.5 font-mono text-[10px] uppercase text-fg-subtle">{labels.simulated}</span>
         </div>
         <ol className="mt-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-0" aria-label="flow">
           {stages.map((s, i) => {

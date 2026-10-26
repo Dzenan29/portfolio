@@ -20,8 +20,8 @@ export function generateStaticParams() {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#080b10" },
-    { media: "(prefers-color-scheme: light)", color: "#f6f8fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0d0f" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f7f5" },
   ],
   colorScheme: "dark light",
 };

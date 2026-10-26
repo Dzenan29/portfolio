@@ -5,55 +5,60 @@
 
 /* ---------------------------------------------------------------------------
    Design tokens. Dark is the primary design; light is a full counterpart.
+
+   Color follows high-performance HMI practice: the interface is neutral graphite,
+   one muted steel-blue accent marks data and interaction, and saturated color is
+   reserved for states that need attention (warning, critical). "OK" is not green -
+   it is simply calm. --teal is kept as a token name for the "normal/ok" role.
    --------------------------------------------------------------------------- */
 :root,
 [data-theme="dark"] {
-  --bg: #080b10;
-  --bg-raised: #0d1219;
-  --surface: #111821;
-  --surface-2: #161f2a;
-  --line: #1e2935;
-  --line-strong: #2b3a4a;
-  --fg: #e8edf2;
-  --fg-muted: #93a3b5;
-  --fg-subtle: #64758a;
-  --accent: #3fd8f2;
-  --accent-strong: #14b8d6;
-  --accent-ink: #04141a;
-  --accent-soft: rgb(63 216 242 / 0.12);
-  --teal: #34d3a6;
-  --teal-soft: rgb(52 211 166 / 0.12);
-  --warn: #f5b84a;
-  --warn-soft: rgb(245 184 74 / 0.14);
-  --crit: #ff6b6b;
-  --crit-soft: rgb(255 107 107 / 0.14);
-  --grid: rgb(147 163 181 / 0.06);
-  --shadow: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 20px 50px -24px rgb(0 0 0 / 0.7);
+  --bg: #0c0d0f;
+  --bg-raised: #111214;
+  --surface: #151619;
+  --surface-2: #1b1d21;
+  --line: #25272c;
+  --line-strong: #34373d;
+  --fg: #ecebe8;
+  --fg-muted: #a4a5a7;
+  --fg-subtle: #75777b;
+  --accent: #8db4d8;
+  --accent-strong: #a9c7e3;
+  --accent-ink: #0c0d0f;
+  --accent-soft: rgb(141 180 216 / 0.1);
+  --teal: #a4a5a7;
+  --teal-soft: rgb(255 255 255 / 0.05);
+  --warn: #e0a64e;
+  --warn-soft: rgb(224 166 78 / 0.12);
+  --crit: #e5696b;
+  --crit-soft: rgb(229 105 107 / 0.12);
+  --grid: rgb(255 255 255 / 0.03);
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.02) inset;
   color-scheme: dark;
 }
 
 [data-theme="light"] {
-  --bg: #f6f8fa;
+  --bg: #f7f7f5;
   --bg-raised: #ffffff;
   --surface: #ffffff;
-  --surface-2: #eef2f6;
-  --line: #dde4eb;
-  --line-strong: #c5d0db;
-  --fg: #0c141c;
-  --fg-muted: #4a5a6c;
-  --fg-subtle: #6b7a8c;
-  --accent: #0a8fae;
-  --accent-strong: #077591;
+  --surface-2: #f0f0ed;
+  --line: #e2e2de;
+  --line-strong: #cbcbc6;
+  --fg: #141517;
+  --fg-muted: #55575b;
+  --fg-subtle: #75777b;
+  --accent: #2f6690;
+  --accent-strong: #24537a;
   --accent-ink: #ffffff;
-  --accent-soft: rgb(10 143 174 / 0.1);
-  --teal: #0b8f6c;
-  --teal-soft: rgb(11 143 108 / 0.1);
+  --accent-soft: rgb(47 102 144 / 0.08);
+  --teal: #55575b;
+  --teal-soft: rgb(0 0 0 / 0.04);
   --warn: #a86400;
   --warn-soft: rgb(196 122 0 / 0.12);
   --crit: #c62f2f;
   --crit-soft: rgb(198 47 47 / 0.1);
-  --grid: rgb(12 20 28 / 0.05);
-  --shadow: 0 1px 2px rgb(12 20 28 / 0.04), 0 18px 40px -28px rgb(12 20 28 / 0.25);
+  --grid: rgb(0 0 0 / 0.04);
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.03);
   color-scheme: light;
 }
 
@@ -197,16 +202,6 @@ body {
   }
 }
 
-@keyframes pulse-dot {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
-}
-
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -222,10 +217,7 @@ body {
   .anim-flow {
     animation: dash-flow 1.2s linear infinite;
   }
-  .anim-pulse {
-    animation: pulse-dot 2.4s ease-in-out infinite;
-  }
-  .anim-rise {
+.anim-rise {
     animation: rise-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
   .reveal {

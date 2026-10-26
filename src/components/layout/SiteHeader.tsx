@@ -107,7 +107,6 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Pick<Dictio
             href={localePath(locale, routes.contact)}
             className="hidden items-center gap-2 rounded-lg bg-fg px-3.5 py-2 text-sm font-medium text-bg transition-opacity hover:opacity-90 sm:inline-flex lg:hidden xl:inline-flex"
           >
-            <span aria-hidden className="size-1.5 rounded-full bg-teal anim-pulse" />
             {dict.nav.talk}
           </Link>
           <button

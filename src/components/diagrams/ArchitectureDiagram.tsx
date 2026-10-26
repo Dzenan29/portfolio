@@ -12,13 +12,13 @@ const kindLabel: Record<StageKind, Record<Locale, string>> = {
 };
 
 const kindColor: Record<StageKind, string> = {
-  hardware: "var(--teal)",
-  firmware: "var(--teal)",
-  network: "var(--accent)",
-  service: "var(--accent)",
-  data: "var(--fg-muted)",
-  ui: "var(--accent)",
-  ops: "var(--warn)",
+  hardware: "var(--fg-subtle)",
+  firmware: "var(--fg-subtle)",
+  network: "var(--fg-subtle)",
+  service: "var(--fg-subtle)",
+  data: "var(--fg-subtle)",
+  ui: "var(--fg-subtle)",
+  ops: "var(--fg-subtle)",
 };
 
 /**

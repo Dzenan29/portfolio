@@ -26,7 +26,7 @@ export function ExperienceTimeline({
             <span
               aria-hidden
               className={`absolute left-0 top-1.5 size-[11px] rounded-full border-2 md:left-[190px] ${
-                current ? "border-accent bg-accent shadow-[0_0_0_4px_var(--accent-soft)]" : "border-line-strong bg-bg"
+                current ? "border-fg bg-fg" : "border-line-strong bg-bg"
               }`}
             />
             <div className="font-mono text-xs text-fg-subtle md:pt-0.5 md:text-right">
