@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://dzenan29.github.io/portfolio/sitemap.xml

@@ -1,0 +1,26 @@
+1:"$Sreact.fragment"
+5:"/portfolio/_next/static/chunks/0umf92h1sb77c.js"
+6:I[39756,["$5"],"default"]
+7:I[37457,["$5"],"default"]
+b:I[97367,["$5"],"OutletBoundary"]
+c:"$Sreact.suspense"
+f:"ViewportBoundary"
+10:I[97367,["$5"],"$f"]
+11:"MetadataBoundary"
+12:I[97367,["$5"],"$11"]
+:HL["/portfolio/_next/static/chunks/1bkpky5eczp2z.css","style"]
+3:X
+9:X
+9:C
+a:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[null,null,["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"p":"$@e","v":null,"s":"$3"}}]]
+4:[["children",{"s":"/_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","template":["$","$L7",null,{}]}]]}],"p":"$@8","v":"$9","s":"$3"},"c":"$Qa"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/portfolio/_next/static/chunks/1bkpky5eczp2z.css","precedence":"next"}],["$","script","script-0",{"src":"/portfolio/_next/static/chunks/0umf92h1sb77c.js","async":true}]],["$","html",null,{"lang":"en","data-theme":"dark","className":"J6tYxG_variable PHhD9W_variable","children":["$","body",null,{"className":"bg-grid flex min-h-dvh items-center justify-center bg-bg px-4 text-fg","children":["$","main",null,{"className":"max-w-lg","children":[["$","p",null,{"className":"font-mono text-xs uppercase tracking-[0.2em] text-accent","children":"404 · no carrier"}],["$","h1",null,{"className":"mt-4 text-5xl font-semibold tracking-tight","children":"Signal lost"}],["$","p",null,{"className":"mt-3 text-fg-muted","children":"This page doesn't exist - or it has moved."}],["$","p",null,{"className":"mt-1 text-fg-subtle","lang":"de","children":"Diese Seite existiert nicht - oder sie ist umgezogen."}],["$","div",null,{"className":"mt-8 flex gap-3 font-mono text-sm","children":[["$","a",null,{"href":"/portfolio/en/","className":"rounded-lg bg-fg px-4 py-2 text-bg","children":"Back to the homepage"}],["$","a",null,{"href":"/portfolio/de/","lang":"de","className":"rounded-lg border border-line px-4 py-2","children":"Zur Startseite"}]]}]]}]}]}]]}],"p":"$@2","v":null,"s":"$3"},"c":"$Q4"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L10",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L12",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$c",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"404 | Dzenan Kusi"}],["$","meta","1",{"name":"robots","content":"noindex"}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@13","v":null,"s":"$3"}},"a":"$@14","u":"$@15","b":"P9M3GGT8sAML5oMQbUbru"}
+d:null
+3:300
+15:true
+3:C
+14:0
+8:"$undefined"
+2:"$undefined"
+13:"$undefined"
+e:"$undefined"

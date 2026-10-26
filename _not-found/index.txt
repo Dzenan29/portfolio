@@ -1,0 +1,20 @@
+1:"$Sreact.fragment"
+3:"/portfolio/_next/static/chunks/0umf92h1sb77c.js"
+4:I[39756,["$3"],"default"]
+5:I[37457,["$3"],"default"]
+8:I[97367,["$3"],"OutletBoundary"]
+9:"$Sreact.suspense"
+b:"ViewportBoundary"
+c:I[97367,["$3"],"$b"]
+e:"MetadataBoundary"
+f:I[97367,["$3"],"$e"]
+11:I[68027,[],"default",1]
+:HL["/portfolio/_next/static/chunks/1bkpky5eczp2z.css","style"]
+6:X
+7:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[null,null,["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],"p":false,"v":null}}]]
+2:[["children",{"s":"/_not-found","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$6"},"c":"$Q7"}]]
+0:{"P":null,"c":["","_not-found",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/portfolio/_next/static/chunks/1bkpky5eczp2z.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/portfolio/_next/static/chunks/0umf92h1sb77c.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","data-theme":"dark","className":"J6tYxG_variable PHhD9W_variable","children":["$","body",null,{"className":"bg-grid flex min-h-dvh items-center justify-center bg-bg px-4 text-fg","children":["$","main",null,{"className":"max-w-lg","children":[["$","p",null,{"className":"font-mono text-xs uppercase tracking-[0.2em] text-accent","children":"404 · no carrier"}],["$","h1",null,{"className":"mt-4 text-5xl font-semibold tracking-tight","children":"Signal lost"}],["$","p",null,{"className":"mt-3 text-fg-muted","children":"This page doesn't exist - or it has moved."}],["$","p",null,{"className":"mt-1 text-fg-subtle","lang":"de","children":"Diese Seite existiert nicht - oder sie ist umgezogen."}],["$","div",null,{"className":"mt-8 flex gap-3 font-mono text-sm","children":[["$","a",null,{"href":"/portfolio/en/","className":"rounded-lg bg-fg px-4 py-2 text-bg","children":"Back to the homepage"}],["$","a",null,{"href":"/portfolio/de/","lang":"de","className":"rounded-lg border border-line px-4 py-2","children":"Zur Startseite"}]]}]]}]}]}]]}],"p":false,"v":null},"c":"$Q2"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$Lc",null,{"children":"$Ld"}],["$","$Lf",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$9",null,{"name":"Next.Metadata","children":"$L10"}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":false,"v":null}},"m":"$undefined","G":["$11",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"P9M3GGT8sAML5oMQbUbru"}
+6:C
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+a:null
+10:[["$","title","0",{"children":"404 | Dzenan Kusi"}],["$","meta","1",{"name":"robots","content":"noindex"}]]
