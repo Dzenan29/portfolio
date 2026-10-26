@@ -12,12 +12,12 @@ the entry in `src/content/`.
 - [ ] CV: the old PDF was **removed** from the site (it predates this version and may conflict with dates). Add a current one to `public/` and set `contact.resume`.
 
 ### Experience (`src/content/experience.ts`)
-- [ ] Ruhr-Universität Bochum: start **Nov 2022** (brief) - the old site said 2023. Title "IT Administration / Research IT" OK?
-- [ ] Group-wide work is phrased as contribution, not sole ownership - check that the bullets match your actual scope.
-- [ ] Freelance web development & logistics, Dortmund 2020-2022 - taken from the old site, not in the brief. Keep or remove?
+- [x] Ruhr-Universität Bochum: start **Nov 2022** confirmed.
+- [ ] Title "IT Administration / Research IT" and bullets match your actual scope (group-wide work is phrased as contribution).
+- [x] Freelance web development & logistics, Dortmund 2020-2022 - keep.
 - [ ] Dainese: title "IT System Administrator", 2019-2020 - confirm title and dates.
-- [ ] Hotel: currently shown as "Hotel & spa resort, Tuscany" (old site: ADLER Spa Resort THERMAE, 2018-2019). Confirm before naming the employer.
-- [ ] Banking internship, Siena 2018: employer and stack intentionally not named. Confirm what may be shown.
+- [x] Hotel: employer stays unnamed ("Hotel & spa resort, Tuscany"). Period 2018-2019 still to confirm.
+- [x] Banking internship, Siena 2018: employer and stack stay unnamed.
 - [ ] FH Dortmund: "Computer Science (studies in progress)" - exact programme name?
 - [ ] Languages (from old site): Italian & Bosnian native, English fluent, German C1.
 

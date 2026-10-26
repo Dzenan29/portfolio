@@ -78,8 +78,8 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Pick<Dictio
           <Logo />
         </Link>
 
-        <nav aria-label={dict.a11y.mainNav} className="ml-6 hidden lg:block">
-          <ul className="flex items-center gap-1 text-sm">
+        <nav aria-label={dict.a11y.mainNav} className="ml-2 hidden lg:block xl:ml-6">
+          <ul className="flex items-center gap-0.5 text-sm xl:gap-1">
             {desktopItems.map((item) => {
               const active = isActive(item.path);
               return (
@@ -87,7 +87,7 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Pick<Dictio
                   <Link
                     href={localePath(locale, item.path)}
                     aria-current={active ? "page" : undefined}
-                    className={`relative rounded-md px-3 py-2 transition-colors ${
+                    className={`relative whitespace-nowrap rounded-md px-2.5 py-2 transition-colors xl:px-3 ${
                       active ? "text-fg" : "text-fg-muted hover:text-fg"
                     }`}
                   >
@@ -105,7 +105,7 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Pick<Dictio
           <ThemeSwitcher labels={{ toLight: dict.a11y.themeToLight, toDark: dict.a11y.themeToDark }} />
           <Link
             href={localePath(locale, routes.contact)}
-            className="hidden items-center gap-2 rounded-lg bg-fg px-3.5 py-2 text-sm font-medium text-bg transition-opacity hover:opacity-90 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-lg bg-fg px-3.5 py-2 text-sm font-medium text-bg transition-opacity hover:opacity-90 sm:inline-flex lg:hidden xl:inline-flex"
           >
             <span aria-hidden className="size-1.5 rounded-full bg-teal anim-pulse" />
             {dict.nav.talk}
