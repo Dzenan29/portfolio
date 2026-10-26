@@ -29,13 +29,7 @@ export default async function ExperiencePage({ params }: Params) {
           </h2>
           <div className="mt-4 md:mt-0 md:pl-10">
             <p className="text-lg font-semibold tracking-tight">{education.title[locale]}</p>
-            <p className="text-sm text-fg-muted">
-              {education.institution[locale]} · {education.location[locale]}
-            </p>
-            <p className="mt-2 inline-flex items-center gap-1.5 font-mono text-[11px] text-accent">
-              <span aria-hidden className="size-1.5 rounded-full bg-accent" />
-              {dict.common.ongoing}
-            </p>
+            <p className="text-sm text-fg-muted">{education.location[locale]}</p>
           </div>
         </section>
       </Container>

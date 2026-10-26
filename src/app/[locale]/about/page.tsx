@@ -41,11 +41,7 @@ export default async function AboutPage({ params }: Params) {
             <div className="panel p-6">
               <h2 className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">{dict.about.education}</h2>
               <p className="mt-3 font-medium">{education.title[locale]}</p>
-              <p className="text-sm text-fg-muted">{education.institution[locale]}</p>
-              <p className="mt-2 inline-flex items-center gap-1.5 font-mono text-[11px] text-accent">
-                <span aria-hidden className="size-1.5 rounded-full bg-accent" />
-                {dict.common.ongoing}
-              </p>
+              <p className="text-sm text-fg-muted">{education.location[locale]}</p>
             </div>
             <div className="panel p-6">
               <h2 className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">{dict.about.languages}</h2>

@@ -84,8 +84,8 @@ export const about = {
   ),
   paragraphs: [
     l(
-      "Since November 2022 I've been part of the IT side of an organic chemistry research group at Ruhr-Universität Bochum. Next to that, I study Computer Science at FH Dortmund. The work is wonderfully broad: one day it's a Proxmox host or a GlassFish thread dump, the next it's an ESP32 with a camera pointed at a pressure gauge.",
-      "Seit November 2022 bin ich auf der IT-Seite einer Arbeitsgruppe für Organische Chemie an der Ruhr-Universität Bochum tätig. Daneben studiere ich Informatik an der FH Dortmund. Die Arbeit ist herrlich breit: An einem Tag ist es ein Proxmox-Host oder ein GlassFish-Thread-Dump, am nächsten eine ESP32 mit Kamera vor einem Manometer.",
+      "Since November 2022 I've been part of the IT side of an organic chemistry research group at Ruhr-Universität Bochum. The work is wonderfully broad: one day it's a Proxmox host or a GlassFish thread dump, the next it's an ESP32 with a camera pointed at a pressure gauge.",
+      "Seit November 2022 bin ich auf der IT-Seite einer Arbeitsgruppe für Organische Chemie an der Ruhr-Universität Bochum tätig. Die Arbeit ist herrlich breit: An einem Tag ist es ein Proxmox-Host oder ein GlassFish-Thread-Dump, am nächsten eine ESP32 mit Kamera vor einem Manometer.",
     ),
     l(
       "My path wasn't a straight line. I started in IT support and system administration in Italy, moved to Germany, learned the language and built websites before landing in research IT. What connects all of it is curiosity about how systems actually work - down to the signal on the wire.",
