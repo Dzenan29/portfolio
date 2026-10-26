@@ -27,8 +27,8 @@ export default async function LabPage({ params }: Params) {
   return (
     <>
       <PageHeader eyebrow={dict.nav.lab} title={dict.lab.title} lead={dict.lab.lead}>
-        <p className="mt-8 flex max-w-2xl items-start gap-3 rounded-xl border border-warn/30 bg-warn-soft px-4 py-3 text-sm text-fg">
-          <span aria-hidden className="mt-0.5 font-mono text-warn">!</span>
+        <p className="mt-8 flex max-w-2xl items-start gap-3 rounded-xl border border-line-strong px-4 py-3 text-sm text-fg-muted">
+          <span aria-hidden className="mt-0.5 font-mono text-fg-subtle">i</span>
           {dict.lab.disclaimer}
         </p>
         <nav aria-label={dict.lab.title} className="mt-8">

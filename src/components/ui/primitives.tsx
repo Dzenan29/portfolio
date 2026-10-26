@@ -49,25 +49,24 @@ export function SectionHeading({
   );
 }
 
-const statusStyle: Record<Status, { dot: string; ring: string }> = {
-  completed: { dot: "bg-teal", ring: "border-teal/30 text-teal" },
-  operational: { dot: "bg-accent anim-pulse", ring: "border-accent/30 text-accent" },
-  "in-development": { dot: "bg-warn", ring: "border-warn/30 text-warn" },
-  planned: { dot: "border border-fg-subtle bg-transparent", ring: "border-line-strong text-fg-muted" },
-  "verification-required": { dot: "bg-fg-subtle", ring: "border-line-strong text-fg-subtle" },
+const statusStyle: Record<Status, string> = {
+  completed: "border-line-strong text-fg-muted",
+  operational: "border-line-strong text-fg-muted",
+  "in-development": "border-warn/40 text-warn",
+  planned: "border-dashed border-line-strong text-fg-subtle",
+  "verification-required": "border-dashed border-line-strong text-fg-subtle",
 };
 
-/** Status is shown with text and shape, never by color alone. */
+/** Status is shown as text with a quiet outline; color only flags work that isn't finished. */
 export function ProjectStatus({ status, label, size = "sm" }: { status: Status; label: string; size?: "sm" | "md" }) {
   const s = statusStyle[status];
   return (
     <span
       data-status={status}
-      className={`inline-flex items-center gap-2 rounded-full border bg-bg/40 font-mono uppercase tracking-wider ${s.ring} ${
-        size === "md" ? "px-3 py-1.5 text-[11px]" : "px-2.5 py-1 text-[10px]"
+      className={`inline-flex items-center rounded-md border font-mono uppercase tracking-wider ${s} ${
+        size === "md" ? "px-2.5 py-1 text-[11px]" : "px-2 py-0.5 text-[10px]"
       }`}
     >
-      <span aria-hidden className={`size-1.5 rounded-full ${s.dot}`} />
       {label}
     </span>
   );
@@ -102,7 +101,7 @@ export function ButtonLink({
   className?: string;
 }) {
   const styles = {
-    primary: "bg-accent text-accent-ink hover:bg-accent-strong",
+    primary: "bg-fg text-bg hover:opacity-85",
     secondary: "border border-line-strong text-fg hover:border-fg-subtle hover:bg-surface",
     ghost: "text-fg hover:text-accent px-0",
   }[variant];
@@ -127,8 +126,7 @@ export function ButtonLink({
 
 export function SimulatedBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded border border-warn/30 bg-warn-soft px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-warn">
-      <span aria-hidden className="size-1 rounded-full bg-warn" />
+    <span className="inline-flex items-center rounded border border-line-strong px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
       {label}
     </span>
   );

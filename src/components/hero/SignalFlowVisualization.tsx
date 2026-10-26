@@ -283,7 +283,7 @@ export function SignalFlowVisualization({ locale, labels }: { locale: Locale; la
                 style={{ left: `${(n.x / W) * 100}%`, top: `${(n.y / H) * 100}%` }}
                 className={`absolute w-[30%] -translate-x-1/2 -translate-y-1/2 rounded-lg border px-2.5 py-2 text-left backdrop-blur-sm transition-all duration-300 ${
                   isSel
-                    ? "border-accent/70 bg-surface shadow-[0_0_0_4px_var(--accent-soft)]"
+                    ? "border-accent/70 bg-surface"
                     : lit
                       ? "border-line-strong bg-surface/95"
                       : "border-line bg-surface/70 opacity-60"
@@ -358,7 +358,7 @@ function InspectorBody({ node, locale, tick, labels }: { node: FlowNode; locale:
       <p className="text-sm font-medium leading-tight">
         {node.title[locale]} <span className="ml-1.5 font-mono text-[10px] font-normal text-fg-subtle">{node.protocol}</span>
       </p>
-      <span className="self-start justify-self-end rounded border border-warn/30 bg-warn-soft px-1 font-mono text-[9px] uppercase text-warn">
+      <span className="self-start justify-self-end rounded border border-line-strong px-1 font-mono text-[9px] uppercase text-fg-subtle">
         {labels.simulated}
       </span>
       <p className="text-xs leading-snug text-fg-muted">{node.detail[locale]}</p>

@@ -125,7 +125,7 @@ export function SimulatedSensorDashboard({ labels }: { labels: Labels }) {
               {labels.channels[sel.id]} · t+{t}s
             </p>
             <div className="flex items-center gap-2">
-              <span className="rounded border border-warn/30 bg-warn-soft px-1.5 font-mono text-[10px] uppercase text-warn">{labels.simulated}</span>
+              <span className="rounded border border-line-strong px-1.5 font-mono text-[10px] uppercase text-fg-subtle">{labels.simulated}</span>
               <button
                 type="button"
                 onClick={() => setRunning((r) => !r)}

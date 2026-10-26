@@ -25,11 +25,6 @@ export function EngineeringHero({ locale, dict }: Props) {
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden">
       <div aria-hidden className="bg-grid mask-radial pointer-events-none absolute inset-0" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 right-[-10%] size-[640px] rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle, var(--accent-soft), transparent 65%)" }}
-      />
       <Container className="relative grid items-center gap-12 pb-20 pt-12 sm:pt-20 lg:grid-cols-[1fr_1.05fr] lg:gap-14 lg:pb-28 lg:pt-24">
         <div className="anim-rise">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-fg-subtle">{dict.hero.eyebrow}</p>
@@ -40,10 +35,7 @@ export function EngineeringHero({ locale, dict }: Props) {
             }`}
           >
             <span className="block">{dict.hero.titleLine1}</span>
-            <span className="block text-fg-muted">
-              {dict.hero.titleLine2.replace(/\.$/, "")}
-              <span className="text-accent">.</span>
-            </span>
+            <span className="block text-fg-muted">{dict.hero.titleLine2}</span>
           </h1>
           <p className="mt-7 max-w-xl text-pretty text-base leading-relaxed text-fg-muted sm:text-lg">{dict.hero.lead}</p>
           <div className="mt-9 flex flex-wrap gap-3">
@@ -54,12 +46,10 @@ export function EngineeringHero({ locale, dict }: Props) {
           </div>
           <Link
             href={localePath(locale, routes.contact)}
-            className="mt-10 inline-flex items-center gap-3 rounded-full border border-line py-1.5 pl-2 pr-4 text-sm text-fg-muted transition-colors hover:border-line-strong hover:text-fg"
+            className="mt-10 inline-flex items-center gap-3 text-sm text-fg-muted underline-offset-4 transition-colors hover:text-fg hover:underline"
           >
-            <span className="flex items-center gap-1.5 rounded-full bg-teal-soft px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-teal">
-              <span aria-hidden className="size-1.5 rounded-full bg-teal" />
-              {site.location[locale].split(",")[0]}
-            </span>
+            <span>{site.location[locale]}</span>
+            <span aria-hidden className="h-3 w-px bg-line-strong" />
             {dict.hero.contactHint}
             <ArrowRight aria-hidden className="size-3.5" />
           </Link>

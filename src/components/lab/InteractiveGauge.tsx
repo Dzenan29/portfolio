@@ -70,7 +70,7 @@ export function InteractiveGauge({ labels }: { labels: Labels }) {
       <div className="panel ticks relative self-start p-4 sm:p-6">
         <div className="flex items-center justify-between">
           <span className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">camera frame · roi</span>
-          <span className="rounded border border-warn/30 bg-warn-soft px-1.5 font-mono text-[10px] uppercase text-warn">{labels.simulated}</span>
+          <span className="rounded border border-line-strong px-1.5 font-mono text-[10px] uppercase text-fg-subtle">{labels.simulated}</span>
         </div>
         <svg
           ref={svgRef}

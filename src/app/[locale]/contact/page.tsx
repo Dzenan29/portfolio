@@ -82,7 +82,7 @@ export default async function ContactPage({ params }: Params) {
                   {site.contact.email && (
                     <a
                       href={`mailto:${site.contact.email}`}
-                      className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-lg bg-accent px-5 text-sm font-medium text-accent-ink hover:bg-accent-strong"
+                      className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-lg bg-fg px-5 text-sm font-medium text-bg hover:opacity-85"
                     >
                       <Mail aria-hidden className="size-4" />
                       {c.email}

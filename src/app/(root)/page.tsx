@@ -14,10 +14,10 @@ export default function RootPage() {
       <noscript>
         <meta httpEquiv="refresh" content={`0; url=${base}/en/`} />
       </noscript>
-      <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", color: "#e8edf2", background: "#080b10", minHeight: "100vh" }}>
+      <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", color: "#ecebe8", background: "#0c0d0f", minHeight: "100vh" }}>
         <p>
-          <a href={`${base}/en/`} style={{ color: "#3fd8f2" }}>English</a> ·{" "}
-          <a href={`${base}/de/`} style={{ color: "#3fd8f2" }}>Deutsch</a>
+          <a href={`${base}/en/`} style={{ color: "#8db4d8" }}>English</a> ·{" "}
+          <a href={`${base}/de/`} style={{ color: "#8db4d8" }}>Deutsch</a>
         </p>
       </main>
     </>

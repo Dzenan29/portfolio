@@ -62,7 +62,7 @@ const kindColor: Record<Kind, string> = {
   proxy: "var(--accent)",
   vm: "var(--fg-muted)",
   container: "var(--accent)",
-  monitoring: "var(--warn)",
+  monitoring: "var(--accent)",
   hypervisor: "var(--teal)",
   backup: "var(--teal)",
 };
@@ -83,7 +83,7 @@ export function InfrastructureTopology({ locale, labels }: { locale: Locale; lab
         <div aria-hidden className="bg-grid-fine absolute inset-0 opacity-60" />
         <div className="relative flex items-center justify-between border-b border-line px-4 py-2.5">
           <span className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">{labels.conceptual}</span>
-          <span className="rounded border border-warn/30 bg-warn-soft px-1.5 font-mono text-[10px] uppercase text-warn">{labels.simulated}</span>
+          <span className="rounded border border-line-strong px-1.5 font-mono text-[10px] uppercase text-fg-subtle">{labels.simulated}</span>
         </div>
         {/* Diagram (tablet+) */}
         <div className="relative hidden aspect-[800/510] md:block">
@@ -121,7 +121,7 @@ export function InfrastructureTopology({ locale, labels }: { locale: Locale; lab
                 style={{ left: `${(n.x / W) * 100}%`, top: `${(n.y / H) * 100}%` }}
                 className={`absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-md border px-2.5 py-1.5 font-mono text-[11px] transition-all ${
                   isSel
-                    ? "border-accent bg-surface text-fg shadow-[0_0_0_4px_var(--accent-soft)]"
+                    ? "border-accent bg-surface text-fg"
                     : isLinked
                       ? "border-line-strong bg-surface text-fg"
                       : "border-line bg-surface/80 text-fg-subtle hover:text-fg"
