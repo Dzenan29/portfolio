@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* Theme switching is driven by data-theme on <html> (set before paint, see ThemeScript). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Dark is the primary design; light is a full counterpart.
+   --------------------------------------------------------------------------- */
+:root,
+[data-theme="dark"] {
+  --bg: #080b10;
+  --bg-raised: #0d1219;
+  --surface: #111821;
+  --surface-2: #161f2a;
+  --line: #1e2935;
+  --line-strong: #2b3a4a;
+  --fg: #e8edf2;
+  --fg-muted: #93a3b5;
+  --fg-subtle: #64758a;
+  --accent: #3fd8f2;
+  --accent-strong: #14b8d6;
+  --accent-ink: #04141a;
+  --accent-soft: rgb(63 216 242 / 0.12);
+  --teal: #34d3a6;
+  --teal-soft: rgb(52 211 166 / 0.12);
+  --warn: #f5b84a;
+  --warn-soft: rgb(245 184 74 / 0.14);
+  --crit: #ff6b6b;
+  --crit-soft: rgb(255 107 107 / 0.14);
+  --grid: rgb(147 163 181 / 0.06);
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 20px 50px -24px rgb(0 0 0 / 0.7);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #f6f8fa;
+  --bg-raised: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #eef2f6;
+  --line: #dde4eb;
+  --line-strong: #c5d0db;
+  --fg: #0c141c;
+  --fg-muted: #4a5a6c;
+  --fg-subtle: #6b7a8c;
+  --accent: #0a8fae;
+  --accent-strong: #077591;
+  --accent-ink: #ffffff;
+  --accent-soft: rgb(10 143 174 / 0.1);
+  --teal: #0b8f6c;
+  --teal-soft: rgb(11 143 108 / 0.1);
+  --warn: #a86400;
+  --warn-soft: rgb(196 122 0 / 0.12);
+  --crit: #c62f2f;
+  --crit-soft: rgb(198 47 47 / 0.1);
+  --grid: rgb(12 20 28 / 0.05);
+  --shadow: 0 1px 2px rgb(12 20 28 / 0.04), 0 18px 40px -28px rgb(12 20 28 / 0.25);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-crit: var(--crit);
+  --color-crit-soft: var(--crit-soft);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --shadow-panel: var(--shadow);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+html {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Engineering motifs
+   --------------------------------------------------------------------------- */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility bg-grid-fine {
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+@utility mask-fade-b {
+  mask-image: linear-gradient(to bottom, black 55%, transparent);
+}
+
+@utility mask-radial {
+  mask-image: radial-gradient(ellipse at 60% 40%, black 30%, transparent 75%);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* Panel: the basic surface used across the site. */
+@utility panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Small corner ticks evoke technical drawings without adding noise. */
+@utility ticks {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--line-strong);
+    pointer-events: none;
+  }
+  &::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-top-left-radius: 4px;
+  }
+  &::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Motion. Every animation is opt-in through prefers-reduced-motion.
+   --------------------------------------------------------------------------- */
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-flow {
+    animation: dash-flow 1.2s linear infinite;
+  }
+  .anim-pulse {
+    animation: pulse-dot 2.4s ease-in-out infinite;
+  }
+  .anim-rise {
+    animation: rise-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* No-JS fallback: content must never stay hidden. */
+.no-js .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Range inputs styled once for all demos. */
+input[type="range"] {
+  accent-color: var(--accent);
+  height: 1.75rem;
+  cursor: pointer;
+}
