@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+# Builds the static export and publishes it to the gh-pages branch, which is what
+# GitHub Pages already serves for this repository (Settings → Pages → Branch: gh-pages).
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_BASE_PATH: /portfolio
+      NEXT_PUBLIC_SITE_URL: https://dzenan29.github.io/portfolio
+      # Optional: add a repository variable CONTACT_FORM_ENDPOINT to enable the contact form.
+      NEXT_PUBLIC_CONTACT_FORM_ENDPOINT: ${{ vars.CONTACT_FORM_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
+          force_orphan: true
