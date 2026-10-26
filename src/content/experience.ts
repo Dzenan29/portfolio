@@ -26,8 +26,8 @@ export const experience: ExperienceEntry[] = [
       l("Troubleshooting and technical documentation", "Fehlersuche und technische Dokumentation"),
     ],
     technologies: ["Linux", "Windows", "Proxmox", "Docker", "Active Directory", "OPSI", "Grafana", "Node-RED", "ESP32", "Python"],
-    verification: "needs-review",
-    reviewNote: "Start date per brief (Nov 2022); the previous site said 2023. Group-wide work is phrased as contribution, not sole ownership.",
+    verification: "verified",
+    reviewNote: "Start date Nov 2022 confirmed. Group-wide work is phrased as contribution, not sole ownership.",
   },
   {
     id: "freelance",
@@ -41,8 +41,8 @@ export const experience: ExperienceEntry[] = [
       l("Websites for local businesses: themes, hosting setup, client handover", "Websites für lokale Unternehmen: Themes, Hosting-Einrichtung, Übergabe an Kunden"),
     ],
     technologies: ["HTML", "CSS", "JavaScript", "WordPress"],
-    verification: "needs-review",
-    reviewNote: "Taken from the previous site; not part of the brief. Confirm or remove.",
+    verification: "verified",
+    reviewNote: "Confirmed to keep.",
   },
   {
     id: "dainese",
@@ -71,7 +71,7 @@ export const experience: ExperienceEntry[] = [
       l("Coordination with vendors", "Abstimmung mit Dienstleistern"),
     ],
     verification: "needs-review",
-    reviewNote: "Employer name intentionally generic until confirmed (previous site: ADLER Spa Resort THERMAE, 2018-2019).",
+    reviewNote: "Employer stays unnamed by choice. Period 2018-2019 still to confirm.",
   },
   {
     id: "bank",
@@ -85,7 +85,7 @@ export const experience: ExperienceEntry[] = [
       l("Collaboration with analysts and researchers", "Zusammenarbeit mit Analysten und Forschenden"),
     ],
     verification: "needs-review",
-    reviewNote: "Employer and stack intentionally not named until confirmed.",
+    reviewNote: "Employer and stack stay unnamed by choice.",
   },
 ];
 
