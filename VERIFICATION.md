@@ -18,7 +18,7 @@ the entry in `src/content/`.
 - [ ] Dainese: title "IT System Administrator", 2019-2020 - confirm title and dates.
 - [x] Hotel: employer stays unnamed ("Hotel & spa resort, Tuscany"). Period 2018-2019 still to confirm.
 - [x] Banking internship, Siena 2018: employer and stack stay unnamed.
-- [ ] FH Dortmund: "Computer Science (studies in progress)" - exact programme name?
+- [x] Education shows only "Computer Science / Informatik · Dortmund, Germany" (institution and status removed by choice).
 - [ ] Languages (from old site): Italian & Bosnian native, English fluent, German C1.
 
 ### Projects (`src/content/projects.ts`)

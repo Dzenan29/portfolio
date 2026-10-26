@@ -90,9 +90,8 @@ export const experience: ExperienceEntry[] = [
 ];
 
 export const education = {
-  title: l("Computer Science (studies in progress)", "Informatik (Studium laufend)"),
-  institution: l("Fachhochschule Dortmund", "Fachhochschule Dortmund"),
-  location: l("Dortmund, Germany", "Dortmund"),
+  title: l("Computer Science", "Informatik"),
+  location: l("Dortmund, Germany", "Dortmund, Deutschland"),
 };
 
 export const languages = [
