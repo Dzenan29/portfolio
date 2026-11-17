@@ -52,6 +52,8 @@ the entry in `src/content/`.
 - [x] CV editor is live as **cvio** at cvio.eu; text taken from its public start page.
 - [ ] **Gas meter digitization (A8):** new; confirm the data path and the number of meters.
 - [ ] Old uncalibrated gauge screenshot removed.
+- [x] Helpdesk automation (C6) and Balance Stream (D1) are **completed** (owner, 2026-11-17). In development: local AI,
+  OctetDraw, VectorMol only.
 
 ### Not published yet (`publish: false`)
 
