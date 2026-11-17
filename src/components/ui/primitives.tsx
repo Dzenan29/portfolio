@@ -52,18 +52,18 @@ export function SectionHeading({
 const statusStyle: Record<Status, string> = {
   completed: "border-line-strong text-fg-muted",
   operational: "border-line-strong text-fg-muted",
-  "in-development": "border-warn/40 text-warn",
+  "in-development": "border-dashed border-line-strong text-fg-muted",
   planned: "border-dashed border-line-strong text-fg-subtle",
   "verification-required": "border-dashed border-line-strong text-fg-subtle",
 };
 
-/** Status is shown as text with a quiet outline; color only flags work that isn't finished. */
+/** Status is shown as text with a quiet outline and no colour; unfinished work gets a dashed outline. */
 export function ProjectStatus({ status, label, size = "sm" }: { status: Status; label: string; size?: "sm" | "md" }) {
   const s = statusStyle[status];
   return (
     <span
       data-status={status}
-      className={`inline-flex items-center rounded-md border font-mono uppercase tracking-wider ${s} ${
+      className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-md border font-mono uppercase tracking-wider ${s} ${
         size === "md" ? "px-2.5 py-1 text-[11px]" : "px-2 py-0.5 text-[10px]"
       }`}
     >

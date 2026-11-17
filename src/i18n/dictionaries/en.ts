@@ -4,12 +4,36 @@ export const en = {
     siteDescription:
       "Engineering portfolio of Dzenan Kusi, Dortmund: embedded systems and ESP32 development, Industrial IoT, monitoring and automation, Linux and Windows infrastructure, and research IT.",
     pages: {
-      projects: { title: "Projects", description: "Case studies and supporting work across embedded systems, Industrial IoT, infrastructure, monitoring and research IT." },
-      expertise: { title: "Expertise", description: "Technologies and engineering domains, grouped by evidence: professional experience, project experience and current exploration." },
-      about: { title: "About", description: "Who Dzenan Kusi is, how he works and what drives his engineering across hardware, software and infrastructure." },
-      experience: { title: "Experience", description: "Professional experience in research IT, systems administration and software development." },
-      lab: { title: "Engineering Lab", description: "Interactive browser simulations: analog gauge digitization, sensor threshold alerting and an infrastructure architecture explorer." },
-      contact: { title: "Contact", description: "Get in touch with Dzenan Kusi about engineering challenges, roles and collaborations." },
+      projects: {
+        title: "Projects",
+        description:
+          "Case studies and supporting work across embedded systems, Industrial IoT, infrastructure, monitoring and research IT.",
+      },
+      expertise: {
+        title: "Expertise",
+        description:
+          "Technologies and engineering domains, grouped by evidence: professional experience, project experience and current exploration.",
+      },
+      about: {
+        title: "About",
+        description:
+          "Who Dzenan Kusi is, how he works and what drives his engineering across hardware, software and infrastructure.",
+      },
+      experience: {
+        title: "Experience",
+        description:
+          "Professional experience in research IT, systems administration and software development.",
+      },
+      lab: {
+        title: "Engineering Lab",
+        description:
+          "Interactive browser simulations: analog gauge digitization, sensor threshold alerting and an infrastructure architecture explorer.",
+      },
+      contact: {
+        title: "Contact",
+        description:
+          "Get in touch with Dzenan Kusi about engineering challenges, roles and collaborations.",
+      },
     },
   },
   a11y: {
@@ -37,7 +61,8 @@ export const en = {
   },
   common: {
     simulated: "Simulated",
-    simulatedNote: "Simulated values generated in your browser. Not connected to any real equipment.",
+    simulatedNote:
+      "Simulated values generated in your browser. Not connected to any real equipment.",
     conceptual: "Conceptual illustration",
     readCaseStudy: "Read case study",
     viewDetails: "View details",
@@ -141,7 +166,8 @@ export const en = {
     flagship: "Flagship case studies",
     supporting: "Supporting projects & capabilities",
     inDevelopment: "In development",
-    inDevelopmentLead: "Work that is actively being built or investigated. Scope and results may change.",
+    inDevelopmentLead:
+      "Work that is actively being built or investigated. Scope and results may change.",
     planned: "Planned",
     filterLabel: "Filter projects by domain",
     techFilterLabel: "Filter by technology",
@@ -160,14 +186,18 @@ export const en = {
     currentStatus: "Current status",
     related: "Related work",
     architectureAlt: "Text description of the architecture",
-    conceptualNote: "Conceptual diagram. Hostnames, addresses and topology are generalized and do not describe a real deployment.",
-    imageNote: "Screenshot of the project's own embedded web interface.",
+    conceptualNote:
+      "Conceptual diagram. Hostnames, addresses and topology are generalized and do not describe a real deployment.",
+    openLive: "Open the live application",
+    imageNote: "Own screenshot; names and addresses removed.",
     statusNote: {
       completed: "This work is completed. It may still receive maintenance.",
       operational: "This is ongoing operational work rather than a finished deliverable.",
-      "in-development": "This work is in progress. Described components are marked where they are planned rather than implemented.",
+      "in-development":
+        "This work is in progress. Described components are marked where they are planned rather than implemented.",
       planned: "This is a planned project. Nothing described here should be read as finished.",
-      "verification-required": "Details of this entry are still being verified and are intentionally kept brief.",
+      "verification-required":
+        "Details of this entry are still being verified and are intentionally kept brief.",
     },
     planned: "planned",
   },
@@ -198,7 +228,8 @@ export const en = {
   lab: {
     title: "Engineering Lab",
     lead: "Interactive explorations of hardware, software and connected systems.",
-    disclaimer: "Everything on this page runs as a simulation in your browser. Nothing is connected to laboratory hardware or production services, and no value shown is a real operating limit.",
+    disclaimer:
+      "Everything on this page runs as a simulation in your browser. Nothing is connected to laboratory hardware or production services, and no value shown is a real operating limit.",
     gauge: {
       title: "Analog gauge digitization",
       lead: "How a camera-based reader turns a needle angle into a number: linear calibration between two known points on the dial.",
@@ -213,7 +244,8 @@ export const en = {
       formula: "Conversion",
       outOfRange: "Needle outside calibrated range - value clamped",
       dragHint: "Drag the needle or use the slider",
-      explain: "On the real device, image processing estimates the needle angle. Calibration maps two reference angles to known values; everything in between is interpolated linearly. This only holds for gauges with a linear scale, and the reading can never be more accurate than the angle estimate and the gauge itself.",
+      explain:
+        "On the real device, image processing estimates the needle angle. Calibration maps two reference angles to known values; everything in between is interpolated linearly. This only holds for gauges with a linear scale, and the reading can never be more accurate than the angle estimate and the gauge itself.",
     },
     iot: {
       title: "Industrial IoT monitoring",
@@ -230,7 +262,8 @@ export const en = {
       escalated: "escalated",
       deescalated: "de-escalated",
       channels: { temperature: "Temperature", pressure: "Pressure", oxygen: "Oxygen" },
-      explain: "Thresholds here are arbitrary demo numbers. Real limits depend on the equipment and are defined by the people responsible for it - not by a portfolio website.",
+      explain:
+        "Thresholds here are arbitrary demo numbers. Real limits depend on the equipment and are defined by the people responsible for it - not by a portfolio website.",
     },
     infra: {
       title: "Infrastructure architecture explorer",
@@ -238,7 +271,15 @@ export const en = {
       select: "Select a component",
       role: "Role",
       connects: "Connected to",
-      kinds: { hypervisor: "Hypervisor node", vm: "Virtual machine", container: "Container", proxy: "Reverse proxy", monitoring: "Monitoring", backup: "Backup target", client: "Users" },
+      kinds: {
+        hypervisor: "Hypervisor node",
+        vm: "Virtual machine",
+        container: "Container",
+        proxy: "Reverse proxy",
+        monitoring: "Monitoring",
+        backup: "Backup target",
+        client: "Users",
+      },
     },
     flow: {
       title: "Availability check workflow",
@@ -271,7 +312,8 @@ export const en = {
       sending: "Sending…",
       success: "Thank you - your message was delivered. I'll get back to you.",
       failure: "The message could not be delivered. Please email me directly instead.",
-      privacy: "Your details are only used to answer your message. They are transmitted to the form service that delivers this message by email.",
+      privacy:
+        "Your details are only used to answer your message. They are transmitted to the form service that delivers this message by email.",
       errors: {
         nameRequired: "Please enter your name.",
         emailInvalid: "Please enter a valid email address.",
