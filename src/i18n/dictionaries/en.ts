@@ -161,7 +161,7 @@ export const en = {
     related: "Related work",
     architectureAlt: "Text description of the architecture",
     conceptualNote: "Conceptual diagram. Hostnames, addresses and topology are generalized and do not describe a real deployment.",
-    imageNote: "Screenshot of the project's own embedded web interface.",
+    imageNote: "Own screenshot; names and addresses removed.",
     statusNote: {
       completed: "This work is completed. It may still receive maintenance.",
       operational: "This is ongoing operational work rather than a finished deliverable.",

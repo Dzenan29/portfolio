@@ -163,7 +163,7 @@ export const de: Dictionary = {
     related: "Verwandte Arbeiten",
     architectureAlt: "Textbeschreibung der Architektur",
     conceptualNote: "Konzeptdiagramm. Hostnamen, Adressen und Topologie sind verallgemeinert und beschreiben keine reale Installation.",
-    imageNote: "Screenshot der projekteigenen Embedded-Weboberfläche.",
+    imageNote: "Eigener Screenshot; Namen und Adressen sind entfernt.",
     statusNote: {
       completed: "Diese Arbeit ist abgeschlossen. Sie kann weiterhin gewartet werden.",
       operational: "Dies ist laufende Betriebsarbeit, kein abgeschlossenes Ergebnis.",
