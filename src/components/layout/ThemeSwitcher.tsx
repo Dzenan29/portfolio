@@ -6,8 +6,28 @@ import { THEME_STORAGE_KEY } from "./ThemeScript";
 
 type Theme = "dark" | "light";
 
+/**
+ * Switching the language re-renders <html> with its server default (dark), and the inline
+ * ThemeScript does not run again on client-side navigation. Put the stored choice back.
+ */
+function restoreStoredTheme() {
+  try {
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    const root = document.documentElement;
+    if ((stored === "light" || stored === "dark") && root.getAttribute("data-theme") !== stored) {
+      root.setAttribute("data-theme", stored);
+    }
+  } catch {
+    /* storage unavailable - nothing to restore */
+  }
+}
+
 function subscribe(callback: () => void) {
-  const observer = new MutationObserver(callback);
+  restoreStoredTheme();
+  const observer = new MutationObserver(() => {
+    restoreStoredTheme();
+    callback();
+  });
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   return () => observer.disconnect();
 }
@@ -20,12 +40,13 @@ export function ThemeSwitcher({ labels }: { labels: { toLight: string; toDark: s
   const next: Theme = theme === "dark" ? "light" : "dark";
 
   function toggle() {
-    document.documentElement.setAttribute("data-theme", next);
+    // Store first: the observer above restores the stored value whenever the attribute changes.
     try {
       localStorage.setItem(THEME_STORAGE_KEY, next);
     } catch {
       /* storage unavailable - theme still applies for this page view */
     }
+    document.documentElement.setAttribute("data-theme", next);
   }
 
   const label = theme === "dark" ? labels.toLight : labels.toDark;
