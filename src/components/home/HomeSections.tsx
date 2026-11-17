@@ -208,12 +208,12 @@ export function InfrastructureSection({ locale, dict }: Props) {
 
         <div className="mt-14 grid gap-4 lg:grid-cols-12">
           {/* topology */}
-          <div className="reveal panel relative overflow-hidden p-5 sm:p-6 lg:col-span-7">
+          <div className="reveal panel relative flex flex-col overflow-hidden p-5 sm:p-6 lg:col-span-7">
             <div className="flex items-center justify-between">
               <p className="font-mono text-[11px] uppercase tracking-wider text-fg-subtle">topology · {dict.common.conceptual}</p>
               <SimulatedBadge label={dict.common.simulated} />
             </div>
-            <svg viewBox="0 0 520 260" className="mt-4 h-auto w-full" role="img" aria-label={`${dict.common.conceptual}: reverse proxy → 3 hypervisor nodes → VMs and containers; monitoring; backup NAS`}>
+            <svg viewBox="0 0 520 260" className="my-auto h-auto w-full pt-4" role="img" aria-label={`${dict.common.conceptual}: reverse proxy → 3 hypervisor nodes → VMs and containers; monitoring; backup NAS`}>
               <defs>
                 <pattern id="infra-dots" width="10" height="10" patternUnits="userSpaceOnUse">
                   <circle cx="1" cy="1" r="0.8" fill="var(--line-strong)" />
@@ -221,7 +221,7 @@ export function InfrastructureSection({ locale, dict }: Props) {
               </defs>
               <rect x="0" y="0" width="520" height="260" fill="url(#infra-dots)" opacity="0.6" />
               {/* proxy */}
-              <rect x="200" y="12" width="120" height="34" rx="6" fill="var(--surface-2)" stroke="var(--accent)" />
+              <rect x="180" y="12" width="160" height="34" rx="6" fill="var(--surface-2)" stroke="var(--accent)" />
               <text x="260" y="33" textAnchor="middle" className="fill-fg font-mono" fontSize="11">reverse-proxy · tls</text>
               {nodes.map((n, i) => {
                 const x = 40 + i * 160;
