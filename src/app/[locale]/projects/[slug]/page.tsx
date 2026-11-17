@@ -165,6 +165,18 @@ export default async function ProjectPage({ params }: Params) {
       </header>
 
       <Container className="pb-24">
+        {project.repository && (
+          <p className="mt-8">
+            <a
+              href={project.repository}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-line px-4 py-2 text-sm text-fg transition-colors hover:border-fg-subtle"
+            >
+              {cs.openLive} <span aria-hidden="true">↗</span>
+            </a>
+          </p>
+        )}
         {image && (
           <figure className="reveal mt-12 overflow-hidden rounded-2xl border border-line bg-bg-raised p-3 sm:p-6">
             {/* eslint-disable-next-line @next/next/no-img-element -- static export */}

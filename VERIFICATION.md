@@ -46,6 +46,13 @@ the entry in `src/content/`.
 - [ ] **Hardware repair (A7), instrument computers (C4), Matrix/e-mail alerts (A2):** wording matches your scope?
 - [ ] **Gauge reader (A1):** MQTT is now claimed, based on the firmware dashboard screenshot.
 
+### Changed 2026-11-17 on the owner's word
+
+- [x] Glovebox, temperature monitoring, lab-journal pipeline and GPU workstation are **completed** (owner, 2026-11-17).
+- [x] CV editor is live as **cvio** at cvio.eu; text taken from its public start page.
+- [ ] **Gas meter digitization (A8):** new; confirm the data path and the number of meters.
+- [ ] Old uncalibrated gauge screenshot removed.
+
 ### Not published yet (`publish: false`)
 
 - [ ] B6 Windows MDT - confirm your implementation scope.

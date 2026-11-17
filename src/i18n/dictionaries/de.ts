@@ -6,12 +6,36 @@ export const de: Dictionary = {
     siteDescription:
       "Engineering-Portfolio von Dzenan Kusi, Dortmund: Embedded Systems und ESP32-Entwicklung, Industrial IoT, Monitoring und Automatisierung, Linux- und Windows-Infrastruktur sowie Forschungs-IT.",
     pages: {
-      projects: { title: "Projekte", description: "Fallstudien und weitere Arbeiten aus Embedded Systems, Industrial IoT, Infrastruktur, Monitoring und Forschungs-IT." },
-      expertise: { title: "Expertise", description: "Technologien und Fachgebiete, gegliedert nach Nachweis: Berufspraxis, Projekterfahrung und aktuelle Erkundung." },
-      about: { title: "Über mich", description: "Wer Dzenan Kusi ist, wie er arbeitet und was ihn an Hardware, Software und Infrastruktur antreibt." },
-      experience: { title: "Werdegang", description: "Berufserfahrung in Forschungs-IT, Systemadministration und Softwareentwicklung." },
-      lab: { title: "Engineering Lab", description: "Interaktive Browser-Simulationen: Digitalisierung analoger Manometer, Schwellwert-Alarmierung und ein Infrastruktur-Explorer." },
-      contact: { title: "Kontakt", description: "Kontakt zu Dzenan Kusi für technische Herausforderungen, Stellen und Zusammenarbeit." },
+      projects: {
+        title: "Projekte",
+        description:
+          "Fallstudien und weitere Arbeiten aus Embedded Systems, Industrial IoT, Infrastruktur, Monitoring und Forschungs-IT.",
+      },
+      expertise: {
+        title: "Expertise",
+        description:
+          "Technologien und Fachgebiete, gegliedert nach Nachweis: Berufspraxis, Projekterfahrung und aktuelle Erkundung.",
+      },
+      about: {
+        title: "Über mich",
+        description:
+          "Wer Dzenan Kusi ist, wie er arbeitet und was ihn an Hardware, Software und Infrastruktur antreibt.",
+      },
+      experience: {
+        title: "Werdegang",
+        description:
+          "Berufserfahrung in Forschungs-IT, Systemadministration und Softwareentwicklung.",
+      },
+      lab: {
+        title: "Engineering Lab",
+        description:
+          "Interaktive Browser-Simulationen: Digitalisierung analoger Manometer, Schwellwert-Alarmierung und ein Infrastruktur-Explorer.",
+      },
+      contact: {
+        title: "Kontakt",
+        description:
+          "Kontakt zu Dzenan Kusi für technische Herausforderungen, Stellen und Zusammenarbeit.",
+      },
     },
   },
   a11y: {
@@ -39,7 +63,8 @@ export const de: Dictionary = {
   },
   common: {
     simulated: "Simuliert",
-    simulatedNote: "Simulierte Werte, erzeugt in Ihrem Browser. Keine Verbindung zu realen Geräten.",
+    simulatedNote:
+      "Simulierte Werte, erzeugt in Ihrem Browser. Keine Verbindung zu realen Geräten.",
     conceptual: "Konzeptdarstellung",
     readCaseStudy: "Fallstudie lesen",
     viewDetails: "Details ansehen",
@@ -143,7 +168,8 @@ export const de: Dictionary = {
     flagship: "Fallstudien",
     supporting: "Weitere Projekte & Fähigkeiten",
     inDevelopment: "In Entwicklung",
-    inDevelopmentLead: "Arbeiten, die gerade entstehen oder untersucht werden. Umfang und Ergebnisse können sich noch ändern.",
+    inDevelopmentLead:
+      "Arbeiten, die gerade entstehen oder untersucht werden. Umfang und Ergebnisse können sich noch ändern.",
     planned: "Geplant",
     filterLabel: "Projekte nach Bereich filtern",
     techFilterLabel: "Nach Technologie filtern",
@@ -162,14 +188,18 @@ export const de: Dictionary = {
     currentStatus: "Aktueller Stand",
     related: "Verwandte Arbeiten",
     architectureAlt: "Textbeschreibung der Architektur",
-    conceptualNote: "Konzeptdiagramm. Hostnamen, Adressen und Topologie sind verallgemeinert und beschreiben keine reale Installation.",
+    conceptualNote:
+      "Konzeptdiagramm. Hostnamen, Adressen und Topologie sind verallgemeinert und beschreiben keine reale Installation.",
+    openLive: "Zur laufenden Anwendung",
     imageNote: "Eigener Screenshot; Namen und Adressen sind entfernt.",
     statusNote: {
       completed: "Diese Arbeit ist abgeschlossen. Sie kann weiterhin gewartet werden.",
       operational: "Dies ist laufende Betriebsarbeit, kein abgeschlossenes Ergebnis.",
-      "in-development": "Diese Arbeit läuft noch. Komponenten, die erst geplant sind, sind entsprechend markiert.",
+      "in-development":
+        "Diese Arbeit läuft noch. Komponenten, die erst geplant sind, sind entsprechend markiert.",
       planned: "Dies ist ein geplantes Projekt. Nichts davon ist als fertig zu verstehen.",
-      "verification-required": "Details zu diesem Eintrag werden noch geprüft und sind bewusst knapp gehalten.",
+      "verification-required":
+        "Details zu diesem Eintrag werden noch geprüft und sind bewusst knapp gehalten.",
     },
     planned: "geplant",
   },
@@ -200,7 +230,8 @@ export const de: Dictionary = {
   lab: {
     title: "Engineering Lab",
     lead: "Interaktive Erkundungen von Hardware, Software und vernetzten Systemen.",
-    disclaimer: "Alles auf dieser Seite läuft als Simulation in Ihrem Browser. Nichts ist mit Laborgeräten oder produktiven Diensten verbunden, und kein angezeigter Wert ist ein realer Betriebsgrenzwert.",
+    disclaimer:
+      "Alles auf dieser Seite läuft als Simulation in Ihrem Browser. Nichts ist mit Laborgeräten oder produktiven Diensten verbunden, und kein angezeigter Wert ist ein realer Betriebsgrenzwert.",
     gauge: {
       title: "Digitalisierung analoger Manometer",
       lead: "Wie ein kamerabasierter Leser aus einem Zeigerwinkel eine Zahl macht: lineare Kalibrierung zwischen zwei bekannten Punkten der Skala.",
@@ -215,7 +246,8 @@ export const de: Dictionary = {
       formula: "Umrechnung",
       outOfRange: "Zeiger außerhalb des kalibrierten Bereichs - Wert begrenzt",
       dragHint: "Zeiger ziehen oder Schieberegler nutzen",
-      explain: "Auf dem echten Gerät schätzt die Bildverarbeitung den Zeigerwinkel. Die Kalibrierung ordnet zwei Referenzwinkeln bekannte Werte zu; dazwischen wird linear interpoliert. Das gilt nur für Manometer mit linearer Skala, und die Ablesung kann nie genauer sein als die Winkelschätzung und das Manometer selbst.",
+      explain:
+        "Auf dem echten Gerät schätzt die Bildverarbeitung den Zeigerwinkel. Die Kalibrierung ordnet zwei Referenzwinkeln bekannte Werte zu; dazwischen wird linear interpoliert. Das gilt nur für Manometer mit linearer Skala, und die Ablesung kann nie genauer sein als die Winkelschätzung und das Manometer selbst.",
     },
     iot: {
       title: "Industrial-IoT-Monitoring",
@@ -232,7 +264,8 @@ export const de: Dictionary = {
       escalated: "eskaliert",
       deescalated: "herabgestuft",
       channels: { temperature: "Temperatur", pressure: "Druck", oxygen: "Sauerstoff" },
-      explain: "Die Schwellen hier sind willkürliche Demo-Werte. Echte Grenzwerte hängen vom Gerät ab und werden von den Verantwortlichen festgelegt - nicht von einer Portfolio-Website.",
+      explain:
+        "Die Schwellen hier sind willkürliche Demo-Werte. Echte Grenzwerte hängen vom Gerät ab und werden von den Verantwortlichen festgelegt - nicht von einer Portfolio-Website.",
     },
     infra: {
       title: "Infrastruktur-Explorer",
@@ -240,7 +273,15 @@ export const de: Dictionary = {
       select: "Komponente auswählen",
       role: "Rolle",
       connects: "Verbunden mit",
-      kinds: { hypervisor: "Hypervisor-Knoten", vm: "Virtuelle Maschine", container: "Container", proxy: "Reverse Proxy", monitoring: "Monitoring", backup: "Backup-Ziel", client: "Nutzer" },
+      kinds: {
+        hypervisor: "Hypervisor-Knoten",
+        vm: "Virtuelle Maschine",
+        container: "Container",
+        proxy: "Reverse Proxy",
+        monitoring: "Monitoring",
+        backup: "Backup-Ziel",
+        client: "Nutzer",
+      },
     },
     flow: {
       title: "Ablauf einer Verfügbarkeitsprüfung",
@@ -272,8 +313,10 @@ export const de: Dictionary = {
       submit: "Nachricht senden",
       sending: "Wird gesendet…",
       success: "Vielen Dank - Ihre Nachricht wurde zugestellt. Ich melde mich.",
-      failure: "Die Nachricht konnte nicht zugestellt werden. Bitte schreiben Sie mir direkt per E-Mail.",
-      privacy: "Ihre Angaben werden nur zur Beantwortung Ihrer Nachricht verwendet. Sie werden an den Formulardienst übermittelt, der diese Nachricht per E-Mail zustellt.",
+      failure:
+        "Die Nachricht konnte nicht zugestellt werden. Bitte schreiben Sie mir direkt per E-Mail.",
+      privacy:
+        "Ihre Angaben werden nur zur Beantwortung Ihrer Nachricht verwendet. Sie werden an den Formulardienst übermittelt, der diese Nachricht per E-Mail zustellt.",
       errors: {
         nameRequired: "Bitte geben Sie Ihren Namen ein.",
         emailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",

@@ -84,6 +84,7 @@ export const skillGroups: SkillGroup[] = [
     items: [
       { name: "ESP32", level: "professional" },
       { name: "ESP32-CAM", level: "professional" },
+      { name: "AI on the Edge (meter reading)", level: "professional" },
       { name: "C/C++", level: "professional" },
       { name: "PlatformIO", level: "professional" },
       { name: "Sensor integration", level: "professional" },
@@ -99,6 +100,7 @@ export const skillGroups: SkillGroup[] = [
       "embedded-firmware",
       "esp32-temperature-monitoring",
       "glovebox-monitoring",
+      "gas-meter-digitization",
       "cad-lab-hardware",
     ],
   },

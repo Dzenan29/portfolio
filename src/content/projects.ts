@@ -197,19 +197,6 @@ export const projects: Project[] = [
           "Aktuelles Firmware-Dashboard: kalibrierter Wert, Konfidenz und analysiertes Bild nebeneinander.",
         ),
       },
-      {
-        src: "/gauge-reader-ui.webp",
-        width: 880,
-        height: 430,
-        alt: l(
-          "Embedded web interface of the gauge reader: camera image of a pressure gauge with green sampling arcs and a red line marking the detected needle, above buttons for camera setup, view area, Wi-Fi, store and reset settings.",
-          "Embedded-Weboberfläche des Manometerlesers: Kamerabild eines Manometers mit grünen Abtastbögen und roter Linie für den erkannten Zeiger, darüber Schaltflächen für Kamera-Setup, Bildausschnitt, WLAN, Speichern und Zurücksetzen.",
-        ),
-        caption: l(
-          "An earlier version of the device's web interface, before calibration. Green arcs: sampling paths; red line: detected needle.",
-          "Eine frühere Version der Weboberfläche, noch vor der Kalibrierung. Grüne Bögen: Abtastpfade; rote Linie: erkannter Zeiger.",
-        ),
-      },
     ],
     demo: "gauge",
     related: ["lab-gas-monitoring", "monitoring-automation", "embedded-firmware"],
@@ -386,7 +373,12 @@ export const projects: Project[] = [
         ),
       },
     ],
-    related: ["esp32-analog-gauge-reader", "monitoring-automation", "glovebox-monitoring"],
+    related: [
+      "esp32-analog-gauge-reader",
+      "gas-meter-digitization",
+      "monitoring-automation",
+      "glovebox-monitoring",
+    ],
     reviewNote:
       "Confirm which readings are ESP32-based vs. taken from existing instruments, and which notification channel is used (not named on the site).",
   },
@@ -728,6 +720,21 @@ export const projects: Project[] = [
       ),
     ],
     demo: "flow",
+    images: [
+      {
+        src: "/projects/instrument-dashboard.webp",
+        width: 1600,
+        height: 677,
+        alt: l(
+          "Grafana dashboard for an analytical instrument: status light, power gauge, energy consumption, a round gauge for the helium cylinder pressure and trend charts for power and pressure over 24 hours.",
+          "Grafana-Dashboard für ein Analysegerät: Statusanzeige, Leistungsanzeige, Energieverbrauch, ein rundes Instrument für den Druck der Heliumflasche und Verläufe von Leistung und Druck über 24 Stunden.",
+        ),
+        caption: l(
+          "One dashboard per instrument: power, energy and supply pressure at a glance.",
+          "Ein Dashboard pro Gerät: Leistung, Energie und Versorgungsdruck auf einen Blick.",
+        ),
+      },
+    ],
     related: ["lab-gas-monitoring", "lab-systems-reliability", "automation-scripting"],
   },
   {
@@ -1418,18 +1425,160 @@ export const projects: Project[] = [
   // In development
   // ─────────────────────────────────────────────────────────────────────────
   {
+    id: "A8",
+    slug: "gas-meter-digitization",
+    tier: "supporting",
+    category: "embedded",
+    status: "completed",
+    verification: "needs-review",
+    publish: true,
+    context: "professional",
+    title: l(
+      "Gas Meter Digitization with AI on the Edge",
+      "Digitalisierung von Gaszählern mit AI on the Edge",
+    ),
+    summary: l(
+      "ESP32 cameras running the open-source AI-on-the-edge firmware read mechanical gas meters. The counter values feed a helium balance that shows where gas is used and where it is lost.",
+      "ESP32-Kameras mit der Open-Source-Firmware AI on the Edge lesen mechanische Gaszähler ab. Die Zählerstände speisen eine Heliumbilanz, die zeigt, wo Gas verbraucht wird und wo es verloren geht.",
+    ),
+    problem: l(
+      "Mechanical gas meters only show a number on a drum counter. Nobody writes it down every hour.",
+      "Mechanische Gaszähler zeigen nur eine Zahl auf einem Rollenzählwerk. Niemand schreibt sie stündlich auf.",
+    ),
+    solution: l(
+      "A camera in front of each meter recognises the digits on the device itself and reports the reading to the monitoring.",
+      "Eine Kamera vor jedem Zähler erkennt die Ziffern direkt auf dem Gerät und meldet den Stand an das Monitoring.",
+    ),
+    role: l(
+      "Setup, calibration, data flow, dashboards",
+      "Aufbau, Kalibrierung, Datenfluss, Dashboards",
+    ),
+    technologies: [
+      "ESP32-CAM",
+      "AI on the Edge",
+      "Neural network inference",
+      "MQTT",
+      "Node-RED",
+      "InfluxDB",
+      "Grafana",
+    ],
+    challenge: l(
+      "Helium is expensive and partly recovered, so the interesting number is not a single reading but the balance: what enters, what the individual consumers take, and what comes back. That needs several meters read continuously and at the same time - without replacing calibrated meters by digital ones.",
+      "Helium ist teuer und wird teilweise zurückgewonnen. Interessant ist deshalb nicht der einzelne Messwert, sondern die Bilanz: was hineingeht, was die einzelnen Verbraucher entnehmen und was zurückkommt. Dafür müssen mehrere Zähler gleichzeitig und laufend abgelesen werden - ohne geeichte Zähler gegen digitale zu tauschen.",
+    ),
+    architecture: [
+      {
+        id: "meter",
+        kind: "hardware",
+        label: l("Gas meter", "Gaszähler"),
+        detail: l("Mechanical drum counter", "Mechanisches Rollenzählwerk"),
+      },
+      {
+        id: "cam",
+        kind: "hardware",
+        label: l("ESP32 camera", "ESP32-Kamera"),
+        detail: l("One per meter", "Eine pro Zähler"),
+      },
+      {
+        id: "ai",
+        kind: "firmware",
+        label: l("AI on the Edge", "AI on the Edge"),
+        detail: l("Digit recognition on-device", "Ziffernerkennung auf dem Gerät"),
+      },
+      {
+        id: "flow",
+        kind: "service",
+        label: l("Data flow", "Datenfluss"),
+        detail: l("MQTT, Node-RED, InfluxDB", "MQTT, Node-RED, InfluxDB"),
+      },
+      {
+        id: "dash",
+        kind: "ui",
+        label: l("Helium balance", "Heliumbilanz"),
+        detail: l("Grafana dashboards", "Grafana-Dashboards"),
+      },
+    ],
+    implementation: [
+      {
+        title: l("Meter reading", "Zählerablesung"),
+        items: [
+          l(
+            "Open-source AI-on-the-edge firmware on ESP32 camera modules",
+            "Open-Source-Firmware AI on the Edge auf ESP32-Kameramodulen",
+          ),
+          l(
+            "Alignment and digit regions configured per meter",
+            "Ausrichtung und Ziffernbereiche pro Zähler konfiguriert",
+          ),
+          l(
+            "Plausibility checks, so a misread digit does not become a consumption spike",
+            "Plausibilitätsprüfungen, damit eine falsch gelesene Ziffer nicht zur Verbrauchsspitze wird",
+          ),
+        ],
+      },
+      {
+        title: l("Evaluation", "Auswertung"),
+        items: [
+          l(
+            "Six meters: inlet, outlet and individual consumers",
+            "Sechs Zähler: Eingang, Ausgang und einzelne Verbraucher",
+          ),
+          l(
+            "Balance of inlet against outlet and against the sum of consumers, per month",
+            "Bilanz von Eingang gegen Ausgang und gegen die Summe der Verbraucher, pro Monat",
+          ),
+          l(
+            "Check whether flows stay within the measuring range of each meter",
+            "Prüfung, ob die Flüsse im Messbereich des jeweiligen Zählers bleiben",
+          ),
+        ],
+      },
+    ],
+    images: [
+      {
+        src: "/projects/helium-dashboard.webp",
+        width: 1600,
+        height: 1143,
+        alt: l(
+          "Grafana dashboard for helium: six meter readings at the top, bar chart of inlet minus outlet per month, trend lines of the balance over six months, a status band showing whether flows are within the meter range, and averaged flows per consumer.",
+          "Grafana-Dashboard für Helium: oben sechs Zählerstände, Balkendiagramm Eingang minus Ausgang pro Monat, Verläufe der Bilanz über sechs Monate, ein Statusband, ob die Flüsse im Messbereich der Zähler liegen, und gemittelte Flüsse je Verbraucher.",
+        ),
+        caption: l(
+          "Helium balance in Grafana, built on the camera readings of six gas meters.",
+          "Heliumbilanz in Grafana, aufgebaut auf den Kamera-Ablesungen von sechs Gaszählern.",
+        ),
+      },
+      {
+        src: "/projects/meter-digitization.webp",
+        width: 1048,
+        height: 795,
+        alt: l(
+          "Web interface of the AI-on-the-edge firmware: recognised value, previous value and status on the left, the camera image of a gas meter with boxes around each recognised digit on the right.",
+          "Weboberfläche der Firmware AI on the Edge: links erkannter Wert, vorheriger Wert und Status, rechts das Kamerabild eines Gaszählers mit Rahmen um jede erkannte Ziffer.",
+        ),
+        caption: l(
+          "AI on the Edge reading a gas meter. Serial numbers are blurred.",
+          "AI on the Edge beim Ablesen eines Gaszählers. Seriennummern sind unkenntlich gemacht.",
+        ),
+      },
+    ],
+    related: ["esp32-analog-gauge-reader", "lab-gas-monitoring", "monitoring-automation"],
+    reviewNote:
+      "AI on the Edge is third-party open-source firmware; own share is setup, integration and dashboards. Confirm data path (MQTT/Node-RED/InfluxDB).",
+  },
+  {
     id: "A3",
     slug: "glovebox-monitoring",
     tier: "supporting",
     category: "embedded",
-    status: "in-development",
+    status: "completed",
     verification: "needs-review",
     publish: true,
     context: "professional",
     title: l("Glovebox Equipment Monitoring", "Monitoring von Gloveboxen"),
     summary: l(
-      "Investigating and integrating the signals of laboratory gloveboxes - oxygen, moisture, pressure - into monitoring. Data acquisition only; not a safety or control system.",
-      "Untersuchung und Integration der Signale von Labor-Gloveboxen - Sauerstoff, Feuchte, Druck - ins Monitoring. Reine Datenerfassung; kein Sicherheits- oder Steuerungssystem.",
+      "Integrating the signals of laboratory gloveboxes - oxygen, moisture, pressure - into monitoring. Data acquisition only; not a safety or control system.",
+      "Integration der Signale von Labor-Gloveboxen - Sauerstoff, Feuchte, Druck - ins Monitoring. Reine Datenerfassung; kein Sicherheits- oder Steuerungssystem.",
     ),
     role: l(
       "Interface investigation, I/O diagnostics, integration work",
@@ -1480,7 +1629,7 @@ export const projects: Project[] = [
     ],
     implementation: [
       {
-        title: l("Current work", "Aktuelle Arbeit"),
+        title: l("Implementation", "Umsetzung"),
         items: [
           l(
             "Controller and sensor investigation, I/O diagnostics",
@@ -1494,8 +1643,7 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: l("Next steps", "Nächste Schritte"),
-        planned: true,
+        title: l("Notifications", "Benachrichtigungen"),
         items: [
           l(
             "Non-critical notifications when values leave their normal range",
@@ -1529,7 +1677,7 @@ export const projects: Project[] = [
     slug: "esp32-temperature-monitoring",
     tier: "supporting",
     category: "embedded",
-    status: "in-development",
+    status: "completed",
     verification: "needs-review",
     publish: true,
     context: "professional",
@@ -1571,7 +1719,7 @@ export const projects: Project[] = [
     ],
     implementation: [
       {
-        title: l("Target feature set", "Geplanter Funktionsumfang"),
+        title: l("Feature set", "Funktionsumfang"),
         items: [
           l(
             "DS18B20 integration and temperature observation",
@@ -1595,7 +1743,7 @@ export const projects: Project[] = [
     slug: "labjournal-data-pipeline",
     tier: "supporting",
     category: "software",
-    status: "in-development",
+    status: "completed",
     verification: "needs-review",
     publish: true,
     context: "professional",
@@ -1629,7 +1777,6 @@ export const projects: Project[] = [
         kind: "network",
         label: l("Platform API", "Plattform-API"),
         detail: l("Integration work", "Integrationsarbeit"),
-        planned: true,
       },
     ],
     implementation: [
@@ -1638,7 +1785,7 @@ export const projects: Project[] = [
         items: [
           l("Export handling and JSON transformation", "Export und JSON-Transformation"),
           l("Data preview and metadata preparation", "Datenvorschau und Metadatenaufbereitung"),
-          l("API integration work (in progress)", "API-Integration (in Arbeit)"),
+          l("API integration with the platform", "API-Anbindung an die Plattform"),
         ],
       },
     ],
@@ -1650,7 +1797,7 @@ export const projects: Project[] = [
     slug: "gpu-ai-workstation",
     tier: "supporting",
     category: "hpc-ai",
-    status: "in-development",
+    status: "completed",
     verification: "needs-review",
     publish: true,
     context: "professional",
@@ -1659,13 +1806,13 @@ export const projects: Project[] = [
       "GPU-Workstation & lokale KI-Infrastruktur",
     ),
     summary: l(
-      "Planning and building a GPU workstation (NVIDIA RTX 6000 Ada) for running AI models locally - keeping research data in-house.",
-      "Planung und Aufbau einer GPU-Workstation (NVIDIA RTX 6000 Ada), um KI-Modelle lokal zu betreiben - Forschungsdaten bleiben im Haus.",
+      "Planning, building and running a GPU workstation (NVIDIA RTX 6000 Ada) for running AI models locally - keeping research data in-house.",
+      "Planung, Aufbau und Betrieb einer GPU-Workstation (NVIDIA RTX 6000 Ada), um KI-Modelle lokal zu betreiben - Forschungsdaten bleiben im Haus.",
     ),
     technologies: ["NVIDIA RTX 6000 Ada", "Linux", "Local LLMs", "Resource planning"],
     implementation: [
       {
-        title: l("In progress", "In Arbeit"),
+        title: l("Workstation", "Workstation"),
         items: [
           l("Workstation design and resource planning", "Workstation-Design und Ressourcenplanung"),
           l(
@@ -1675,8 +1822,7 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: l("Planned", "Geplant"),
-        planned: true,
+        title: l("Use in the group", "Nutzung in der Gruppe"),
         items: [
           l(
             "Shared access for the group and integration with the knowledge base",
@@ -1751,19 +1897,63 @@ export const projects: Project[] = [
     slug: "cv-editor",
     tier: "supporting",
     category: "software",
-    status: "planned",
+    status: "completed",
     verification: "needs-review",
     publish: true,
     context: "independent",
-    title: l("CV Editor Web Application", "Lebenslauf-Editor als Webanwendung"),
+    title: l("cvio - CV Editor Web Application", "cvio - Lebenslauf-Editor als Webanwendung"),
     summary: l(
-      "An independent side project: a web application for writing and laying out CVs with structured content and clean exports.",
-      "Ein eigenes Nebenprojekt: eine Webanwendung zum Schreiben und Gestalten von Lebensläufen mit strukturierten Inhalten und sauberem Export.",
+      "An independent project, live at cvio.eu: a web application that turns structured content into a typeset CV and exports it as PDF - free, without an account, and with the data staying on the user's device.",
+      "Ein eigenes Projekt, live unter cvio.eu: eine Webanwendung, die aus strukturierten Inhalten einen gesetzten Lebenslauf macht und als PDF exportiert - kostenlos, ohne Konto, und die Daten bleiben auf dem Gerät der Nutzer.",
     ),
-    technologies: ["TypeScript", "Web"],
-    related: [],
+    role: l("Concept, design, development, operation", "Konzept, Gestaltung, Entwicklung, Betrieb"),
+    technologies: ["TypeScript", "Web application", "PDF export", "Privacy by design"],
+    repository: "https://cvio.eu",
+    implementation: [
+      {
+        title: l("What it does", "Was es kann"),
+        items: [
+          l(
+            "Eight designed templates, exported as PDF",
+            "Acht gestaltete Vorlagen, Export als PDF",
+          ),
+          l(
+            "Import of an existing CV from PDF or Word",
+            "Übernahme eines vorhandenen Lebenslaufs aus PDF oder Word",
+          ),
+          l(
+            "Guided start from a blank page in four steps",
+            "Geführter Start vom leeren Blatt in vier Schritten",
+          ),
+          l("German and English interface", "Oberfläche auf Deutsch und Englisch"),
+        ],
+      },
+      {
+        title: l("Privacy", "Datenschutz"),
+        items: [
+          l("No account, no cookies, no tracking", "Kein Konto, keine Cookies, kein Tracking"),
+          l(
+            "Documents are stored in the browser, not on a server",
+            "Dokumente liegen im Browser, nicht auf einem Server",
+          ),
+        ],
+      },
+    ],
+    images: [
+      {
+        src: "/projects/cvio.webp",
+        width: 1440,
+        height: 725,
+        alt: l(
+          "Start page of cvio: the headline promises a CV that looks typeset, with options to import an existing CV or start from a blank page, next to two sample CV pages.",
+          "Startseite von cvio: Die Überschrift verspricht einen Lebenslauf, der wie gesetzt aussieht, mit den Optionen, einen vorhandenen Lebenslauf zu übernehmen oder mit einem leeren Blatt zu beginnen, daneben zwei Beispielseiten.",
+        ),
+        caption: l("Start page of the live application.", "Startseite der laufenden Anwendung."),
+      },
+    ],
+    related: ["automation-scripting"],
     reviewNote:
-      "Listed as planned per brief. Update status if it should be shown as in development.",
+      "Facts taken from the public start page of cvio.eu on 2026-11-17. Confirm the technology list.",
   },
 
   {
