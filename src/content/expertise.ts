@@ -149,6 +149,7 @@ export const skillGroups: SkillGroup[] = [
       { name: "QNAP / TrueNAS / rsync", level: "professional" },
       { name: "Proxmox Backup Server", level: "professional" },
       { name: "Clonezilla imaging", level: "professional" },
+      { name: "VirtualBox / VMware (legacy instrument software)", level: "professional" },
     ],
     projects: [
       "proxmox-self-hosted-infrastructure",

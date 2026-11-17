@@ -901,6 +901,8 @@ export const projects: Project[] = [
       "Bash",
       "Thread dumps",
       "Log analysis",
+      "VirtualBox / VMware",
+      "Clonezilla",
     ],
     challenge: l(
       "A laboratory information system is used all day and nobody notices it until it stops. It runs on GlassFish behind Nginx on Linux - several layers, each of which can be the reason a request hangs. Good operations here means short outages and, over time, fewer of them.",
@@ -993,8 +995,12 @@ export const projects: Project[] = [
             "Getestete Wiederherstellung kompletter Systeme, damit eine defekte Festplatte kein Gerät tagelang stilllegt",
           ),
           l(
-            "Legacy operating systems such as Windows XP kept running where vendor software requires them",
-            "Weiterbetrieb älterer Betriebssysteme wie Windows XP, wo Hersteller-Software sie voraussetzt",
+            "Legacy operating systems such as Windows XP kept running where the vendor software of analytical instruments (NMR, GC, HPLC) requires them",
+            "Weiterbetrieb älterer Betriebssysteme wie Windows XP, wo die Hersteller-Software analytischer Geräte (NMR, GC, HPLC) sie voraussetzt",
+          ),
+          l(
+            "Virtual machines with VirtualBox or VMware, so instrument software that no longer runs on a current operating system stays usable on modern hardware",
+            "Virtuelle Maschinen mit VirtualBox oder VMware, damit Gerätesoftware, die auf aktuellen Betriebssystemen nicht mehr läuft, auf moderner Hardware nutzbar bleibt",
           ),
           l(
             "Virtualization of control computers, tuning of virtual hardware and offline tests of methods",
