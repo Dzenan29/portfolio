@@ -65,7 +65,7 @@ export function InteractiveGauge({ labels }: { labels: Labels }) {
   const fmt = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1));
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
       {/* Dial */}
       <div className="panel ticks relative self-start p-4 sm:p-6">
         <div className="flex items-center justify-between">

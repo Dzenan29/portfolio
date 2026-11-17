@@ -78,7 +78,7 @@ export function InfrastructureTopology({ locale, labels }: { locale: Locale; lab
   const sel = byId[selected]!;
 
   return (
-    <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr]">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
       <div className="panel ticks relative overflow-hidden">
         <div aria-hidden className="bg-grid-fine absolute inset-0 opacity-60" />
         <div className="relative flex items-center justify-between border-b border-line px-4 py-2.5">

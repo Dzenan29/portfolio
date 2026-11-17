@@ -87,7 +87,7 @@ export function SimulatedSensorDashboard({ labels }: { labels: Labels }) {
   const sel = channels.find((c) => c.id === selected)!;
 
   return (
-    <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
       <div className="space-y-4">
         <div role="tablist" aria-label={labels.channel} className="grid grid-cols-3 gap-2">
           {channels.map((c) => {

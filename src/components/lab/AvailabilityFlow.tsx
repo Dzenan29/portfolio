@@ -65,7 +65,7 @@ export function AvailabilityFlow({ locale, labels }: { locale: Locale; labels: L
   }
 
   return (
-    <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
       <div className="panel p-4 sm:p-5">
         <div className="flex items-center justify-between">
           <span className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">flow · availability-check</span>
